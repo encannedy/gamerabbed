@@ -11,5 +11,14 @@
   "dependencies": {
     "inquirer": "^7.1.0",
     "mysql": "^2.18.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/encannedy/gamerabbed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/encannedy/gamerabbed/issues"
+  },
+  "homepage": "https://github.com/encannedy/gamerabbed#readme"
 }
