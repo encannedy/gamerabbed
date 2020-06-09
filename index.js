@@ -32,7 +32,7 @@ function start(){
             viewRoles();
         }else if (answer.menu === "VIEW_EMPLOYEE") {
             viewEmployees();
-        }        if (answer.menu ==="ADD_DEPARTMENT") {
+        }else if (answer.menu ==="ADD_DEPARTMENT") {
             addDepartment();
         }else if (answer.menu === "ADD_ROLE") {
             addRoles();
@@ -77,17 +77,17 @@ function viewEmployees(){
 
 function printResults (err, result) {
     if (err) throw err;
-    console.log(result.affectedRows + " deleted.");
+    console.log(result + "error");
     start();
 }
 async function addDepartment () {
     const department = await inquirer.prompt([
         {
             name: "name",
-            message: "What is the name of the department"
+            message: "What is the name of the department?"
         }
     ])
-    connection.query (`insert into department (name) values ('${department.name}')`, printResults )
+    connection.query (`insert into department (name) values ('${department.name}')`, printResults ())
   }
   
   function addRoles() {
@@ -178,21 +178,3 @@ async function addDepartment () {
           })
       })
   }
-//selct first_name. last_name, titile, salary, name from employee
-//inner join role on viewEmployees.role_id=role.id 
-//inner join department on role.department_id=department.id
-
-// update initial prompt and ask use what they want to input
-// add department
-//  a) ask the user for a name 
-//  b) insert name into department
-// add role
-//  a) get all departments
-//  b) ask user which department
-//  c) ask the user for title and salary
-//  d) insert title, salary, department_id into role
-// add employee
-//  a) get all roles
-//  b) ask user which role
-//  c) ask user for first_name, last_name
-//  d) insert first_name, last_name, role_id into employee
